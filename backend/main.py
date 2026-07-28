@@ -76,3 +76,10 @@ def delete_task(task_id: int, db: Session = Depends(get_db)):
     if not db_task:
         raise HTTPException(status_code=404, detail="Task not found")
     return None
+
+# ==========================================
+# ✅ THIS GOES AT THE VERY BOTTOM!
+# ==========================================
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
